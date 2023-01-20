@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Какую операцию выполнить?");
+        System.out.println("1.Сложить 2 числа");
+        System.out.println("2.Вычесть первое из второго");
+        System.out.println("3.Перемножить два числа");
+        System.out.println("4.Разделить два числа");
+        System.out.println("5.Возвести в степень N число");
+        System.out.println("6.Найти факториал из числа");
+        System.out.println("7.Выйти из программы");
+
+        int count = scanner.nextInt();
+        while (count != 7) {
+            if (count == 1){
+                System.out.println("Сложение");
+                System.out.println("Введите первое число");
+                float a = scanner.nextInt();
+                System.out.println("Введите второе число");
+                float b = scanner.nextInt();
+                System.out.println("Результат: " + (a + b));
+            }
+            else if (count == 2){
+                System.out.println("Вычитание");
+                System.out.println("Введите первое число");
+                float a = scanner.nextInt();
+                System.out.println("Введите второе число");
+                float b = scanner.nextInt();
+                System.out.println("Результат: " + (a - b));
+                System.out.println("Умножение");
+            }
+            else if (count == 3){
+                System.out.println("Умножение");
+                System.out.println("Введите первое число");
+                float a = scanner.nextInt();
+                System.out.println("Введите второе число");
+                float b = scanner.nextInt();
+                System.out.println("Результат: " + (a * b));
+            }
+            else if (count == 4){
+                System.out.println("Деление");
+                System.out.println("Введите первое число");
+                float a = scanner.nextInt();
+                System.out.println("Введите второе число");
+                float b = scanner.nextInt();
+                float result = 0;
+                try {
+                    result = a / b;
+                } catch (ArithmeticException e){
+                    System.err.println("Деление на ноль");
+                }
+                System.out.println("" + result);
+            }
+            else if (count == 5){
+                System.out.println("Возведение в степень");
+                System.out.println("Введите первое число");
+                float a = scanner.nextInt();
+                System.out.println("Введите степень");
+                float b = scanner.nextInt();
+                System.out.println("Результат: " + Math.pow(a,b));
+            }
+            else if (count == 6){
+                System.out.println("Факториал");
+                System.out.println("Введите первое число");
+                float a = scanner.nextInt();
+                float c = 1;
+                for (float i = 1; i <= a; i++){
+                    c = c * i;
+                }
+                System.out.println("Результат " + c);
+            }
+            System.out.println("Какую операцию выполнить?");
+            float count2 = scanner.nextInt();
+             count = (int) count2;
+        }
+    }
+}
